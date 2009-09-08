@@ -20,6 +20,9 @@
   </h2>
 
   <div class="entry">
+    <div style="float: right;">
+      <%= gravatar_tag(@article.user.email) if this_blog.use_gravatar %>
+    </div>
     <%= @article.html(:body) %>
 
     <% if @article.extended? -%>
