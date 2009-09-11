@@ -18,15 +18,18 @@
   <div id="menubg">
       <div class="menulinks">
         <ul>
-          <li class="page_item <%= 'current_page_item' if (controller.controller_name == "articles" and controller.action_name == "index") %>">
-          <%= link_to _("Home"), this_blog.base_url %>
-            </li>
-            <li class="page_item <%= 'current_page_item' if (controller.action_name != 'index' and controller.action_name != 'view_page') %>">
-                <%= link_to _("Articles"), {:controller => "articles", :action => "archives"} if (controller.controller_name != "index" )%>
-            </li>
-            <li class="page_item <%= 'current_page_item' if (controller.controller_name == "articles" and controller.action_name == "view_page" and params[:name].to_s == 'about') %>">
-                <%= link_to _("About"), this_blog.base_url + "/pages/about" %>
-            </li>
+          <li class="page_item <%= 'current_page_item' if (controller.controller_name == "articles" and controller.action_name != "view_page") %>">
+            <%= link_to "Projektblog", this_blog.base_url %>
+          </li>
+          <li class="page_item <%= 'current_page_item' if (controller.controller_name == "articles" and controller.action_name == "view_page" and params[:name].to_s == 'links') %>">
+              <%= link_to "Links", this_blog.base_url + "/pages/links" %>
+          </li>
+          <li class="page_item <%= 'current_page_item' if (controller.controller_name == "articles" and controller.action_name == "view_page" and params[:name].to_s == 'media') %>">
+              <%= link_to "Videoer/Billeder", this_blog.base_url + "/pages/media" %>
+          </li>
+          <li class="page_item <%= 'current_page_item' if (controller.controller_name == "articles" and controller.action_name == "view_page" and params[:name].to_s == 'members') %>">
+              <%= link_to "Medlemmer", this_blog.base_url + "/pages/members" %>
+          </li>
         </ul>
       </div>
     </div>
@@ -45,7 +48,7 @@
 	</div>
   <div id="footerbg">
     <div class="copyrights">
-      <p>Copyright &copy; <%= this_blog.blog_name %></p>
+      <p>Copyright &copy; KeepFocus A/S</p>
       <p>
         <a href="http://www.themelab.com/2008/02/29/free-release-15-tech-blue/">Tech Blue</a>
         designed by
