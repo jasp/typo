@@ -11,3 +11,4 @@ installer/rails_installer.yml
 /public/javascripts/ckeditor/config.js
 /public/stylesheets/theme
 tmp/*
+public/files
