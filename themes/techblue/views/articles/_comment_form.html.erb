@@ -9,14 +9,14 @@
 
 <div id="preview" style="display:none"></div>
 
-  <h3 id="respond">Leave a comment</h3>
+  <h3 id="respond"><%= _("Leave a comment") %></h3>
   <p>
     <%= text_field "comment", "author", :class => 'textfield' %>
     <label for="author"><small><%= _("Name") %></small></label>
   </p>
   <p>
     <%= text_field "comment", "email", :class => 'textfield' %>
-	  <label><small>Email <%= content_tag('small', "(#{link_to('gravatar', 'http://gravatar.com')} enabled)") if this_blog.use_gravatar %></small></label>
+	  <label><small>Email <%= content_tag('small', "(#{link_to('gravatar', 'http://gravatar.com')} #{_("enabled")})") if this_blog.use_gravatar %></small></label>
 	</p>
   <p>
     <%= text_field "comment", "url", :class => 'textfield' %>
@@ -26,11 +26,11 @@
     <%= text_area 'comment', 'body', :class => 'textfield', :rows => 10, :cols => 50 %>
   </p>
   <p>
-    <%= submit_to_remote('preview', 'Preview!',
+    <%= submit_to_remote('preview', _('Preview comment'),
                          :update => 'preview',
                          :complete => "Element.show('preview')",
                          :url    => @article.preview_comment_url) %>
-    <%= submit_tag 'Submit', :id => 'form-submit-button',  :onclick => "$('commentform').onsubmit();this.disabled=true;Element.hide('preview');return false;" %>
+    <%= submit_tag _('Submit'), :id => 'form-submit-button',  :onclick => "$('commentform').onsubmit();this.disabled=true;Element.hide('preview');return false;" %>
     <%= image_tag '/images/theme/spinner.gif', :id => 'comment_loading', :style => 'display:none' %>
   </p>
 <% end %>

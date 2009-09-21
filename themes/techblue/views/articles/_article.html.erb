@@ -23,6 +23,6 @@
 
   <p class="meta">
     <%= category_links(article) unless article.categories.empty? %> |
-    <%= _("Posted on") + " " +  article.published_at.strftime("%d %b %Y %H:%M") + _("by") + " " + author_link(article) %> | <%= comments_link(article)  if article.allow_comments? %>
+    <%= _("Posted on") + " " +  article.published_at.strftime("%d %b %Y %H:%M") + " " + _("by") + " " + author_link(article) %> | <%= comments_link(article)  if article.allow_comments? %>
   </p>
 </div>
