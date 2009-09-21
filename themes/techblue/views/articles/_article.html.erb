@@ -12,7 +12,7 @@
     <% if article.extended? -%>
       <div class="extended">
         <% if controller.action_name == 'index' -%>
-          <p><%= link_to_permalink article,"Continue reading &raquo;" %></p>
+          <p><%= link_to_permalink article, _("Continue reading &raquo;") %></p>
         <% else -%>
           <%= article.html(:extended) %>
         <% end -%>

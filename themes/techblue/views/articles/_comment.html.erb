@@ -3,9 +3,9 @@
     <%= gravatar_tag(comment.email) if this_blog.use_gravatar and comment.email %>
     <%= (comment.url.blank?) ? h(comment.author) : link_to(h(comment.author), comment.url) %>
   </cite>
-  Says <br />
+  <%= _("Says") %> <br />
   <small class="commentmetadata">
-    <span title="<%= comment.created_at.xmlschema %>"><%= distance_of_time_in_words comment.article.published_at, comment.created_at %> later:</span>
+    <span title="<%= comment.created_at.xmlschema %>"><%= distance_of_time_in_words comment.article.published_at, comment.created_at %> <%= _("later") %>:</span>
   </small>
     
   <%= comment.html %>

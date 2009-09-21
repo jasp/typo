@@ -39,7 +39,7 @@
 
 <% if @article.allow_comments? or @article.published_comments.size > 0 -%>
   <div class="post entry">
-    <h3 id="comments">Comments</h3>
+    <h3 id="comments"><%= _("Comments") %></h3>
     <div id="comments_div">
       <%= render :partial => "comment_list" %>
     </div>
