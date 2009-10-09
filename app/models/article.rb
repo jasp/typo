@@ -434,6 +434,8 @@ class Article < Content
   def rss_author(xml)
     if link_to_author?
       xml.author("#{user.email} (#{user.name})")
+    else
+      xml.author("#{user.name}")
     end
   end
 
