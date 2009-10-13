@@ -14,6 +14,7 @@ describe 'PreviewsController' do
   integrate_views
 
   before(:each) do
+    @request.session = {:user => users(:tobi).id}
     IPSocket.stub!(:getaddress).and_return do
       raise SocketError.new("getaddrinfo: Name or service not known")
     end
@@ -22,11 +23,11 @@ describe 'PreviewsController' do
 
   describe 'index action' do
     before :each do
-      get :index, :id => 1
+      get :index, :id => Factory(:article).id
     end
 
-    it 'should be render template /articles/read' do
-      response.should render_template('/articles/read')
+    it 'should be render template /articles/read.html.erb' do
+      response.should render_template('articles/read.html.erb')
     end
   end
 end
